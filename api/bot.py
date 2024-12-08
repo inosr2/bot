@@ -7,6 +7,9 @@ from flask import Flask, request, jsonify
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 
+if not TELEGRAM_BOT_TOKEN or not GEMINI_API_KEY:
+    raise ValueError("Missing necessary environment variables!")
+
 # Configure Gemini AI
 genai.configure(api_key=GEMINI_API_KEY)
 
@@ -31,7 +34,7 @@ def webhook():
         return jsonify({'status': 'success'}), 200
     except Exception as e:
         print(f"Webhook error: {e}")
-        return jsonify({'status': 'error'}), 500
+        return jsonify({'status': 'error', 'message': str(e)}), 500
 
 # Welcome message handler
 @bot.message_handler(commands=['start', 'help'])

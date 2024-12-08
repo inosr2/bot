@@ -15,9 +15,5 @@
       "dest": "api/bot.py",
       "methods": ["POST"]
     }
-  ],
-  "env": {
-    "TELEGRAM_BOT_TOKEN": "@telegram_bot_token",
-    "GEMINI_API_KEY": "@gemini_api_key"
-  }
+  ]
 }

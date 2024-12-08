@@ -1,4 +1,14 @@
 {
+  "builds": [
+    {
+      "src": "api/bot.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "10mb",
+        "runtime": "python3.9"
+      }
+    }
+  ],
   "routes": [
     {
       "src": "/api/webhook",

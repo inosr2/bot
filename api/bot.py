@@ -131,7 +131,7 @@ def handle_message(message):
 
 # Webhook setup function
 def set_webhook():
-    webhook_url = 'https://bot-eight-murex.vercel.app/api/webhook'
+    webhook_url = 'https://bot-eip17o191-rohit-kumars-projects-2a9291ba.vercel.app/api/webhook'
     bot.set_webhook(url=webhook_url)
 
 # For local testing and Vercel compatibility

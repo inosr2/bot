@@ -2,6 +2,9 @@ import os
 import telebot
 import google.generativeai as genai
 from flask import Flask, request, jsonify
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Get API keys from environment variables
 TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
